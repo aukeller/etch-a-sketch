@@ -1,0 +1,1 @@
+This project utilizes DOM manipulation skills with Javascript to create a sketchpad/Etch-A-Sketch in a web browser.  
