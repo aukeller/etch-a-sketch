@@ -1,0 +1,20 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border: 3px solid black;
+    display: grid;
+    grid-template-columns: repeat(16, auto);
+    grid-template-rows: repeat(16, auto);
+    height: 75vh;
+    width: 40vw;
+}
+
+.square {
+    border: 1px solid red;
+}
