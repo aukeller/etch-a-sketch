@@ -21,10 +21,13 @@ function addSquares(numberOfSquares) {
     const allSquareDivs = document.querySelectorAll('.square');
 
     allSquareDivs.forEach(square => (square.addEventListener('mouseenter', changeColor)));
+    
 }
 
 function changeColor(square) {
-    square.target.style.backgroundColor = '#000000';
+    const hexColors = 16777216
+    let randomColor = Math.floor(Math.random() * hexColors).toString(16);
+    square.target.style.backgroundColor = "#" + randomColor;
 }
 
 function clearGrid() {
@@ -34,7 +37,11 @@ function clearGrid() {
 }
 
 function setSquares() {
-    const numberOfSquares = prompt("Set the number of squares per side (must be no greater than 100)", "16");
+    let numberOfSquares;
+
+    while (parseInt(numberOfSquares) > 100 || numberOfSquares == undefined) {
+        numberOfSquares = prompt("Set the number of squares per side (must be no greater than 100)", "16");
+    }
     
     gridContainer.style.gridTemplateColumns = `repeat(${numberOfSquares}, auto)`;
     gridContainer.style.gridTemplateRows = `repeat(${numberOfSquares}, auto)`;
